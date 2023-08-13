@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cw-3"
+version = "0.1.0"
+description = ""
+authors = ["glebokhlopkov <glebka_90@mail.ru>"]
+readme = "README.md"
+packages = [{include = "cw_3"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
