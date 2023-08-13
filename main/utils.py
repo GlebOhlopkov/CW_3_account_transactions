@@ -2,15 +2,19 @@ import json
 from datetime import datetime
 
 
-def create_transactions_list(filename: str) -> list:
+def create_executed_transactions_list(filename: str) -> list:
     """
-    Метод для экспорта списка транзакций из файла
+    Метод для экспорта списка выполненных транзакций из файла
     :param filename: наименования файла для чтения
-    :return: список транзакций
+    :return: список выполненных транзакций
     """
     with open(filename, 'r', encoding='utf-8') as file:
         transactions_list = json.load(file)
-    return transactions_list
+        executed_transactions_list = []
+        for transaction in transactions_list:
+            if transaction['state'] == "EXECUTED":
+                executed_transactions_list.append(transaction)
+    return executed_transactions_list
 
 
 def format_date(date_iso: str) -> str:
