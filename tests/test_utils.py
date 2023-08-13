@@ -1,4 +1,4 @@
-from main.utils import create_transactions_list, format_date, number_mask
+from main.utils import format_date, number_mask
 
 
 def test_format_date():

@@ -9,10 +9,9 @@ def create_executed_transactions_list(filename: str) -> list:
     :return: список выполненных транзакций
     """
     with open(filename, 'r', encoding='utf-8') as file:
-        transactions_list = json.load(file)
         executed_transactions_list = []
-        for transaction in transactions_list:
-            if transaction['state'] == "EXECUTED":
+        for transaction in json.load(file):
+            if transaction['state'] == 'EXECUTED':
                 executed_transactions_list.append(transaction)
     return executed_transactions_list
 
