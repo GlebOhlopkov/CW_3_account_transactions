@@ -46,3 +46,27 @@ def number_mask(number: str) -> str:
         result_number = ' '.join(list_number)
         return (f'{list_number[0]} {list_number[1]} {result_number[-16:-12]} '
                 f'{result_number[-12:-10]}** **** {result_number[-4:]}')
+
+
+def get_transaction_info(transactions: list, number: int) -> str:
+    """
+    Метод получает на входе список транзакций и номер необходимой транзакции и возвращает
+    информацию о транзакции (дата, тип перевода, откуда, куда, сколько)
+    :param transactions: список транзакций
+    :param number: числовое значение
+    :return: краткая информация о транзакции (дата, тип перевода, откуда, куда, сколько)
+    """
+    date = format_date(transactions[number]['date'])
+    description = transactions[number]['description']
+    if 'from' in transactions[number]:
+        money_from = number_mask(transactions[number]['from'])
+    else: money_from = ' '
+    money_to = number_mask(transactions[number]['to'])
+    money_amount = transactions[number]['operationAmount']['amount']
+    money_name = transactions[number]['operationAmount']['currency']['name']
+
+    return (f'\n'
+            f'{date} {description}\n'
+            f'{money_from} -> {money_to}\n'
+            f'{money_amount} {money_name}\n'
+            f'\n')
