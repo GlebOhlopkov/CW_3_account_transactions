@@ -50,12 +50,8 @@ def test_get_transaction_info():
     assert get_transaction_info(create_executed_transactions_list('tests/test_operations.json'), 0) == ('''
 11.11.1111 Перевод организации
 Maestro 1234 56** **** 5678 -> Счет **2345
-11111.11 руб.
-
-''')
+11111.11 руб.''')
     assert get_transaction_info(create_executed_transactions_list('tests/test_operations.json'), 1) == ('''
 22.12.2222 Открытие вклада
   -> Счет **2345
-22222.22 руб.
-
-''')
+22222.22 руб.''')

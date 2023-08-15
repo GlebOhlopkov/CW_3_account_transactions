@@ -68,5 +68,4 @@ def get_transaction_info(transactions: list, number: int) -> str:
     return (f'\n'
             f'{date} {description}\n'
             f'{money_from} -> {money_to}\n'
-            f'{money_amount} {money_name}\n'
-            f'\n')
+            f'{money_amount} {money_name}')
