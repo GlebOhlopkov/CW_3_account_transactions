@@ -1,0 +1,31 @@
+[
+  {
+    "id": 111,
+    "state": "EXECUTED",
+    "date": "1111-11-11T11:11:11.111111",
+    "operationAmount": {
+      "amount": "11111.11",
+      "currency": {
+        "name": "руб.",
+        "code": "RUB"
+      }
+    },
+    "description": "Перевод организации",
+    "from": "Maestro 1234567812345678",
+    "to": "Счет 12345123451234512345"
+  },
+  {
+    "id": 222,
+    "state": "EXECUTED",
+    "date": "2222-12-22T22:22:22.222222",
+    "operationAmount": {
+      "amount": "22222.22",
+      "currency": {
+        "name": "руб.",
+        "code": "RUB"
+      }
+    },
+    "description": "Открытие вклада",
+    "to": "Счет 12345123451234512345"
+  }
+]
