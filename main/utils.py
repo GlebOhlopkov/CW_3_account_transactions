@@ -36,10 +36,7 @@ def number_mask(number: str) -> str:
     if list_number[0] == "Счет":
         result_number = ' '.join(list_number)
         return f'{list_number[0]} **{result_number[-4:]}'
-    if list_number[0] == "Maestro":
-        result_number = ' '.join(list_number)
-        return f'{list_number[0]} {result_number[-16:-12]} {result_number[-12:-10]}** **** {result_number[-4:]}'
-    if list_number[0] == "MasterCard":
+    if list_number[0] in ["Maestro", "MasterCard"]:
         result_number = ' '.join(list_number)
         return f'{list_number[0]} {result_number[-16:-12]} {result_number[-12:-10]}** **** {result_number[-4:]}'
     if list_number[0] == "Visa":
